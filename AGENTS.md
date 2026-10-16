@@ -38,6 +38,14 @@ wsl -d Debian --cd /mnt/c/codes/moonbit/dateku moon test
 
 接入方式与要求见 `moonbit/scripts/NEW-PROJECT.md` 第二节,此处不展开。本仓库已设 `core.hooksPath = .githooks`。
 
+## 文档站
+
+- VitePress 站点在 `docs/`，中文单语；构建命令 `bun install --frozen-lockfile && bun run build`，输出 `dist`
+- 托管于 Cloudflare Pages 项目 `moonbit-dateku`，自定义域 `dateku.moonbitlang.dev`（CNAME 指向 `moonbit-dateku.pages.dev`），监听路径 `docs/*` 与 `moon.mod`——发版时改了 version 站点才会跟着更新
+- 构建环境变量 `BUN_VERSION=1.4.3` 与 `SKIP_DEPENDENCY_INSTALL=1`，production 与 preview 都设，原因见工作区规范 `NEW-PROJECT.md`
+- 依赖与构建可本地跑（`bun install && bun run build`），`node_modules` 与 `dist` 不跟踪
+- 部署只靠 GitHub App「Cloudflare Workers and Pages」的 push 自动化，仓库里不存凭据，不加 workflow
+
 ## 硬性约定
 
 方向未定,约定随后补。当前唯一的实质约定:不提供业务 API,仅有骨架占位。
