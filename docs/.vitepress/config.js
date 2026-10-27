@@ -41,6 +41,8 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon-180.png' }],
   ],
   themeConfig: {
+    logo: { src: '/logo.svg', width: 74, height: 26, alt: 'DATEKU' },
+    siteTitle: false,
     socialLinks: [{ icon: 'github', link: repository }],
     nav: [
       // 官网门户入口:每个页面顶栏都能一键回到 moonbitlang.dev。
